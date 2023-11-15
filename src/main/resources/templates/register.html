@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Register Page</title>
+	<style>
+		h1 {
+			text-align: center;
+		}
+
+		.container {
+			max-width: 400px;
+			max-height: max-content;
+			margin: 0 auto;
+			background-color: #fff;
+			border: 1px solid #ccc;
+			padding: 30px;
+			border-radius: 10px;
+		}
+
+		.input {
+			width: 100%;
+			margin: 2px 0;
+			border: 1px solid #ccc;
+			padding: 10px;
+			border-radius: 4px;
+			font-weight: bold;
+		}
+
+		label {
+			font-weight: bold;
+		}
+
+		.date {
+			width: 100%;
+			margin: 2px 0;
+			border: 1px solid #ccc;
+			padding: 10px;
+			border-radius: 4px;
+		}
+
+		.button {
+			width: 105%;
+			background-color: #50ba54;
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			font-weight: bold;
+			font-size: larger;
+		}
+
+		.button:hover {
+			background-color: #45a07d;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Registration Page</h1>
+	<div class="container">
+		<form action="/api/user/add" method="post">
+			<label>First Name:</label><br>
+			<input type="text" name="firstname" placeholder="Enter your first name" class="input" required
+				pattern="[a-z A-z]{3,15}"><br><br>
+			<label>Last Name:</label><br>
+			<input type="text" name="lastname" placeholder="Enter your last name" class="input" required
+				pattern="[a-z A-z]{1,15}"><br><br>
+			<label>Email:</label><br>
+			<input type="email" name="email" placeholder="Enter your email" class="input" required><br><br>
+			<label>Password:</label><br>
+			<input type="password" name="password" placeholder="Enter your password" class="input" required
+				pattern="{8}"><br><br>
+			<label>Role:</label><br>
+			<input type="radio" value="Trainer" name="role" required>Trainer
+			<input type="radio" value="Student" name="role" required>Student<br><br>
+			<label>DOB:</label><br>
+			<input type="date" name="dob" class="date" required><br><br>
+			<label>Mobile:</label><br>
+			<input type="text" name="mobile" placeholder="Enter your mobile number" class="input" required><br><br>
+			<input type="submit" value="Register" class="button">
+		</form>
+	</div>
+</body>
+
+</html>

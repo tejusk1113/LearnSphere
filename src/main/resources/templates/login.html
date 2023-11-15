@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>login page</title>
+		<style>
+			h1 {
+				text-align: center;
+			}
+		
+			.container {
+				max-width: 350px;
+				margin: 0 auto;
+				background-color: #fff;
+				border: #ccc solid 1px;
+				padding: 40px;
+				border-radius: 10px;
+			}
+		
+			.input {
+				width: 100%;
+				margin: 5px 0px;
+				border: 1px solid #ccc;
+				border-radius: 3px;
+				padding: 8px;
+				font-weight: bold;
+		
+			}
+		
+			label {
+				font-weight: bold;
+			}
+		
+			.button {
+				width: 105%;
+				padding: 8px;
+				font-weight: bold;
+				font-size: large;
+				background-color: rgb(32, 218, 165);
+				border: none;
+				border-radius: 5px;
+				color: #fff;
+				cursor: pointer;
+			}
+		</style>
+    </head>
+    <body>
+        <h1>Login Page</h1>
+        <div class="container">
+            <form action="/api/user/validateUser" method="post">
+                <label>Email:</label><br>
+                <input type="email" placeholder="Enter your email" name="email" class="input"><br><br>
+                <label>Password:</label><br>
+                <input type="password" placeholder="Enter your password" name="password" class="input"><br><br>
+                <input type="submit" value="Login" class="button">
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>My Lessions</title>
+	<style>
+		h1 {
+			text-align: center;
+		}
+
+		.container {
+			max-width: 600px;
+			margin: 10px auto;
+			border: 1px solid #ccc;
+			padding: 10px;
+			border-radius: 10px;
+		}
+
+		table {
+
+
+			width: 100%;
+			text-align: center;
+			background-color: #fff;
+		}
+
+		.button {
+			width: 100%;
+			background-color: rgb(46, 106, 216);
+			border: none;
+			margin: 5px 0px;
+			padding: 10px;
+			border-radius: 10px;
+			font-weight: bold;
+			color: white;
+			font-size: large;
+			cursor: pointer;
+		}
+
+		textarea {
+			width: 100%;
+			margin-bottom: 3px;
+		}
+
+		.submit {
+			background-color: rgb(46, 106, 220);
+			height: 35px;
+			width: 25%;
+			color: white;
+			font-weight: bold;
+			border-radius: 5px;
+			border: none;
+			cursor: pointer;
+
+
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Welcome to the Lessions world....!</h1>
+
+	<div class="container">
+		<form>
+
+			<table border="1">
+				<tr>
+					<th>Lession ID</th>
+					<th>Lession Name</th>
+					<th>Topics</th>
+					<th>Link</th>
+					<th>Course ID</th>
+				</tr>
+				<td th:text="${lession.lessionId}">Lession lessionId</td>
+				<td th:text="${lession.lessionName}">Lession lessionName</td>
+				<td th:text="${lession.topics}">Lession topics</td>
+				<td th:text="${lession.link}">Lession link</td>
+				<td th:text="${lession.course.courseId}">Lession course</td>
+				</tr>
+
+			</table>
+		</form>
+
+
+	</div>
+	<div class="container">
+		<iframe width="100%" height="315" src="https://www.youtube.com/embed/ERDvP0s7ask?si=y4j3eGpJlW269D_4"
+			title="YouTube video player" frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+			allowfullscreen></iframe>
+	</div>
+	<div class="container">
+		<h2>Add Comments here:</h2>
+		<form action="/api/user/addComments" method="post">
+			<textarea rows="5" name="comments"></textarea><br><br>
+			<input type="submit" value="Add Comment" class="submit"><br>
+		</form>
+	</div>
+	<div class="container">
+		<form action="/api/user/getAllComments">
+		<input type="submit" value="View All Comments" class="submit">
+		<div class="container" th:each="comments:${allComments}">
+			
+		<p th:text="comments.commentsStore"></p>
+	</div>
+		</form>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+	<style>
+		h1 {
+			text-align: center;
+		}
+
+		.container {
+			max-width: 400px;
+			margin: 0px auto;
+			border: 1px solid #ccc;
+			padding: 10px;
+			border-radius: 10px;
+		}
+
+		table {
+
+			height: 100px;
+			width: 100%;
+			text-align: center;
+			background-color: #fff;
+			/* border-radius: 10px;
+                padding: 20px;
+                border: 2px solid #ccc;
+                 */
+		}
+
+		.button {
+			width: 100%;
+			background-color: rgb(46, 106, 216);
+			border: none;
+			margin: 5px 0px;
+			padding: 10px;
+			border-radius: 10px;
+			font-weight: bold;
+			color: white;
+			font-size: large;
+			cursor: pointer;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Welcome to the courses world....!</h1>
+	<div classs="container">
+		<form action="" method="get">
+			<table border="5 solid black">
+				<thead>
+					<tr>
+						<th>Course ID</th>
+						<th>Course Name</th>
+						<th>Course Price</th>
+						<th><input type="submit" value="Buy" class="button"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="Course : ${courses}">
+						<td th:text="${Course.courseId}"></td>
+						<td th:text="${Course.courseName}"></td>
+						<td th:text="${Course.coursePrice}"></td>
+						<td th:text="${Course.lession}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+	</div>
+</body>
+
+</html>
