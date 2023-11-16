@@ -1,13 +1,242 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>LearnSphere E-learning Platform</title>
+        <style>
+            body{
+                background-color:#f0f0f0 ;
+                margin: 0;
+                padding: 0;
+            }
+            
+            .nav-container{
+                background-color:#82b5d7 ;
+                max-width: 100%;
+                padding: 20px;
+              
+            }
+            nav a{
+               text-decoration: none; 
+               border: none;
+               padding: 5px 10px;
+               border-radius: 5px;
+               color: white;
+               
+            }
+            
+            .home{
+                margin-left: 60%;
+                background-color: #a0a0a0;
+                padding: 5px 20px;
+            }
+            .courses{
+                margin-left: 2%;
+                background-color: #ffa500;
+                padding: 5px 20px;
+            }
+            .login{
+                margin-left: 2%;
+                background-color: rgb(68, 130, 247);
+                padding: 5px 20px;
+                
+            }
+            .register{
+                margin-left: 2%;
+                background-color: #3cb371;
+                padding: 5px 20px;
+            }
 
-<head>
-	<meta charset="ISO-8859-1">
-	<title>index page</title>
-</head>
+            .logo{
+                color: white;
+                font-size: large;
+                font-weight: bold;
+                border: none;
+                cursor: pointer;
+            }
+            .logo:hover{
+                font-size: larger;
+            }
 
-<body>
-	<h1>Index Page</h1>
-</body>
+            nav a:hover{
+                background-color: #ffa500;
+            }
 
+            .footer-container{
+                width: 100%;
+                background-color: #000;
+                display: flex;
+                flex-wrap: wrap;
+                /* justify-content: space-around; */
+            }
+
+            .footer{
+                margin-left: 30px;
+                color: white;
+                padding: 10px;
+                
+               
+            }
+            .item-1{
+                margin-top: 0px;
+            }
+            .item-2{
+                margin-left:25%;
+            }
+            
+            .item-3{
+                margin-left: 25%;
+            }
+            .item-3 a{
+                padding: 15px;
+            }
+            p a{
+                text-decoration: none;
+                color: white;
+            }
+            p a:hover{
+                text-decoration: underline;
+            }
+        
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #fff; /* Card background color */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            overflow: hidden;
+            width: 300px;
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+        h1{
+            text-align: center;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="nav-container">
+            <nav>
+                <div class="nav-contents">
+                    <a class="logo" href="/index">LearnSphere</a>
+                    <a class="home" href="/homepage">Home</a>
+                    <a class="courses" href="/api/trainer/findAll">Courses</a>
+                    <a class="login" href="/login">Login</a>
+                    <a class="register" href="/register">Register</a>
+                </div>
+            </nav>
+        </div>
+<div class="welcomecontainer">
+    <h1>Welcome to LearnSphere Platform</h1>
+</div>
+  
+        <div class="card-container">
+            <div class="card">
+                <img src="course1.jpg" alt="Course 1">
+                <div class="card-content">
+                    <h2>Introduction to Programming</h2>
+                    <p>Learn the basics of programming with our comprehensive course. Suitable for beginners.</p>
+                    <a href="#">Enroll Now</a>
+                </div>
+            </div>
+    
+            <div class="card">
+                <img src="course2.jpg" alt="Course 2">
+                <div class="card-content">
+                    <h2>Data Science Fundamentals</h2>
+                    <p>Explore the world of data science and analytics. Ideal for those interested in data-driven insights.</p>
+                    <a href="#">Enroll Now</a>
+                </div>
+            </div>
+    
+            <div class="card">
+                <img src="course3.jpg" alt="Course 3">
+                <div class="card-content">
+                    <h2>Graphic Design Mastery</h2>
+                    <p>Unlock your creativity with our graphic design course. From basics to advanced techniques.</p>
+                    <a href="#">Enroll Now</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="course1.jpg" alt="Course 1">
+                <div class="card-content">
+                    <h2>Introduction to Programming</h2>
+                    <p>Learn the basics of programming with our comprehensive course. Suitable for beginners.</p>
+                    <a href="#">Enroll Now</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="course1.jpg" alt="Course 1">
+                <div class="card-content">
+                    <h2>Introduction to Programming</h2>
+                    <p>Learn the basics of programming with our comprehensive course. Suitable for beginners.</p>
+                    <a href="#">Enroll Now</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="course1.jpg" alt="Course 1">
+                <div class="card-content">
+                    <h2>Introduction to Programming</h2>
+                    <p>Learn the basics of programming with our comprehensive course. Suitable for beginners.</p>
+                    <a href="#">Enroll Now</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="course1.jpg" alt="Course 1">
+                <div class="card-content">
+                    <h2>Introduction to Programming</h2>
+                    <p>Learn the basics of programming with our comprehensive course. Suitable for beginners.</p>
+                    <a href="#">Enroll Now</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="course1.jpg" alt="Course 1">
+                <div class="card-content">
+                    <h2>Introduction to Programming</h2>
+                    <p>Learn the basics of programming with our comprehensive course. Suitable for beginners.</p>
+                    <a href="#">Enroll Now</a>
+                </div>
+            </div>
+        </div>
+        <footer>
+        <div class="footer-container">
+         <div class="footer item-1">
+            <p>Quick Links</p>
+           <p> <a href="#">Terms and Conditions</a></p>
+           <p><a href="#">Contact us</a></p> 
+            <p><a href="#">About us</a></p>
+            <h1>LearnSphere</h1>
+         </div> 
+         <div class="footer item-2">
+            <p>Courses</p>
+            <p><a href="#">Java</a></p>
+            <p><a href="#">Manual Testing</a></p>
+            <p><a href="#">SQL</a></p>
+            <p><a href="#">Python</a></p>
+           <p> <a href="#">Web Technologies</a></p>
+         </div>
+         <div class="footer item-3">
+           <p>&copy; 2023 Learn Sphere. All rights reserved.</p>
+           <a href="https://www.youtube.com/" target="_blank"><img src="youtube.png" alt="youtube" height=30px ></a>
+           <a href="https://www.facebook.com/" target="_blank"><img src="ins.png" height=30px alt="Facebook"></a>
+           <a href="https://www.instagram.com/" target="_blank"><img src="facebook.png" height=30px alt="Instagram"></a>
+           <a href="https://twitter.com/" target="_blank"><img src="twitter.png" height=30px alt="Twitter"></a>
+         </div>
+        </div>
+    </footer>
+    </body>
 </html>
