@@ -1,2 +1,2 @@
 # LearnSphere
-E-learning Platform
+Developed an advanced e-learning platform Learnsphere The Main agenda of the project is to showcase the operations and working of e-learning application and designed to provide a seamless and interactive learning experience.Integrated features for Trainer Registration, Student Registration , course creation, student course enrollment, and Utilized cutting-edge technologies to ensure scalability and user-friendliness.
