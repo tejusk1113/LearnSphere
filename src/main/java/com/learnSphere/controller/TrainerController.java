@@ -37,7 +37,7 @@ public class TrainerController {
 		
 		String msg = tser.addCourse(course);		
 		System.out.println(msg);
-		return "redirect:/";
+		return "addLession";
 		
 	}
 	
@@ -56,7 +56,7 @@ public class TrainerController {
 		course.getLession().add(lession);
 		String msg1 = tser.addCourse(course);
 		System.out.println("Lession successfully added to the course");
-		return "redirect:/";
+		return "forward:/myLessions";
 		
 	}
 	
