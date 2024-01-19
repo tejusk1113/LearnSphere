@@ -3,84 +3,152 @@
 <html>
 
 <head>
-	<title>Register Page</title>
-	<style>
-		h1 {
-			text-align: center;
-		}
+<title>Register Page</title>
+<style>
 
-		.container {
-			max-width: 400px;
-			max-height: max-content;
-			margin: 0 auto;
-			background-color: #fff;
-			border: 1px solid #ccc;
-			padding: 30px;
-			border-radius: 10px;
-		}
+body {
+    
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+#logo{
+	color:rgb(146, 203, 12);
+	text-align:center;
+	font-size:bold;
+}
+div{
+    display: inline-block;
+    margin-right: 120px;
+}
 
-		.input {
-			width: 100%;
-			margin: 2px 0;
-			border: 1px solid #ccc;
-			padding: 10px;
-			border-radius: 4px;
-			font-weight: bold;
-		}
+.formcontainer{
+   	width:250px;
+   	height: 580px;
+    /* max-height: max-content; */
+    margin-top: 10px;
+    margin-left:10px;
+    margin-right:10px;
+    background-color: #fff;
+    border: 1px solid #fff;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right:170px;
+    border-radius: 10px;
+}
 
-		label {
-			font-weight: bold;
-		}
+.input{
+   	width: 150%;
+    margin-left: 0px;
+    margin-right:20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    font-weight: bold;
+}
 
-		.date {
-			width: 100%;
-			margin: 2px 0;
-			border: 1px solid #ccc;
-			padding: 10px;
-			border-radius: 4px;
-		}
 
-		.button {
-			width: 105%;
-			background-color: #50ba54;
-			color: white;
-			padding: 10px 20px;
-			border: none;
-			border-radius: 4px;
-			cursor: pointer;
-			font-weight: bold;
-			font-size: larger;
-		}
+label {
+	font-weight: bold;
+}
 
-		.button:hover {
-			background-color: #45a07d;
-		}
-	</style>
+.date {
+	width: 150%;
+	margin: 2px 0;
+	border: 1px solid #ccc;
+	padding: 10px;
+	border-radius: 4px;
+}
+
+.submit{
+    width: 160%;
+    border: none;
+    margin: 20px 0px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #1877f2;
+    color: white;
+    font-weight: bold;
+    font-size: larger;
+    cursor: pointer;
+}
+.loginmsg{
+	margin-top: 0px;
+    margin-left: 300px; 
+
+}
+#welcome1{
+	
+	color:#043c53;
+	font-weight:600px;
+	font-family:'Fira Sans', sans-serif;
+}
+
+#welcome2{
+	font-size:12px;
+	font-weight:bold;
+	text-align:center;
+	font-family:'Fira Sans', sans-serif;
+}
+
+#account{
+	font-size:14px;
+	font-weight:bold;
+	text-align:center;
+	font-family:'Fira Sans', sans-serif;
+	
+}
+.log{
+	width:40%;
+	margin-left:110px;
+	padding:10px;
+	background-color:#1877f2;
+	border:none;
+	border-radius:5px;
+	color:white;
+	font-weight:bold;
+	cursor: pointer;
+}
+.button:hover {
+	background-color: #45a07d;
+}
+</style>
 </head>
 
 <body>
-	<h1>Registration Page</h1>
-	<div class="container">
+	<a id="logo" href="/"><h1>LearnSphere</h1></a>
+	<br>
+	<div class="loginmsg">
+		<h1 id="welcome1">Welcome to LearnSphere</h1>
+		<p id="welcome2">Good to see you again...!</p>
+		<p id="account">Already have an account..?</p>
+		<form action="/login" method="get">
+			<input type="submit" value="Login" class="log">
+		</form>
+	</div>		
+	<div class="formcontainer">
 		<form action="/api/user/add" method="post">
-			<label>First Name:</label><br>
-			<input type="text" name="firstname" placeholder="Enter your first name" class="input" required
-				pattern="[a-z A-z]{3,15}"><br><br>
-			<label>Last Name:</label><br>
-			<input type="text" name="lastname" placeholder="Enter your last name" class="input" required
-				pattern="[a-z A-z]{1,15}"><br><br>
-			<label>Email:</label><br>
-			<input type="email" name="email" placeholder="Enter your email" class="input" required><br><br>
-			<label>Password:</label><br>
-			<input type="password" name="password" placeholder="Enter your password" class="input" required
-				pattern="{8}"><br><br>
-			<label>Role:</label><br>
-			<input type="radio" value="Trainer" name="role" required>Trainer
-			<input type="radio" value="Student" name="role" required>Student<br><br>
-			<label>DOB:</label><br>
-			<input type="date" name="dob" class="date" required><br><br>
-			<label>Mobile:</label><br>
-			<input type="text" name="mobile" placeholder="Enter your mobile number" class="input" required><br><br>
-			<input type="submit" value="Register" class="button">
+			<label>First Name:</label><br> <input type="text"
+				name="firstname" placeholder="Enter your first name" class="input"
+				required pattern="[a-z A-z]{3,15}"><br>
+			<br> <label>Last Name:</label><br> <input type="text"
+				name="lastname" placeholder="Enter your last name" class="input"
+				required pattern="[a-z A-z]{1,15}"><br>
+			<br> <label>Email:</label><br> <input type="email"
+				name="email" placeholder="Enter your email" class="input" required><br>
+			<br> <label>Password:</label><br> <input type="password"
+				name="password" placeholder="Enter your password" class="input"
+				required pattern="{8}"><br>
+			<br> <label>Role:</label><br> <input type="radio"
+				value="Trainer" name="role" required>Trainer <input
+				type="radio" value="Student" name="role" required>Student<br>
+			<br> <label>DOB:</label><br> <input type="date" name="dob"
+				class="date" required><br>
+			<br> <label>Mobile:</label><br> <input type="text"
+				name="mobile" placeholder="Enter your mobile number" class="input"
+				required><br>
+			<br> <input type="submit" value="Register" class="submit">
 		</form>
 	</div>
 </body>

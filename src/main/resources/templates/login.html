@@ -7,6 +7,15 @@
     <title>Login page</title>
 </head>
 <body>
+<a id="logo" href="/"><h1>LearnSphere</h1></a><br>
+<div class="loginmsg">
+<h1 id="welcome1">Welcome to LearnSphere</h1>
+<p id="welcome2">Good to see you again...!</p>
+<p id="account">Don't have an account..?</p>
+<form action="/register" method="get">
+<input type="submit" value="Register" class="reg">
+</form>
+</div>
 <div class="formcontainer">
         <form action="/api/user/validateUser" method="post">
             <label>Email:</label><br>

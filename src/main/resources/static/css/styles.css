@@ -1,9 +1,14 @@
 
 body {
-    /* font-family: Arial, sans-serif; */
+    
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
+}
+
+div{
+    display: inline-block;
+    margin-right: 120px;
 }
 .navbarcontainer{
     background-color: #4d3636;
@@ -18,17 +23,21 @@ nav a{
 }
 
 .formcontainer{
-    max-width: 400px;
+   	max-width:400px;
     /* max-height: max-content; */
-    margin: 20px auto;
+    margin: 0px 10px;
     background-color: #fff;
     border: 1px solid #fff;
-    padding: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right:150px;
     border-radius: 10px;
 }
 .input{
-   width: 100%;
-    margin: 5px 0px;
+   	width: 150%;
+    margin-left: 0px;
+    margin-right:20px;
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 10px;
@@ -36,7 +45,7 @@ nav a{
 }
 
 .submit{
-    width: 105%;
+    width: 160%;
     border: none;
     margin: 20px 0px;
     padding: 10px;
@@ -75,12 +84,12 @@ label{
     background-color: rgb(49, 222, 49);
 }
 
-a{
+/*a{
     text-decoration: none;
     font-weight: bolder;
     color: white;
     
-}
+}*/
 header {
     background-color: #f0f0f0;
     color: #000;
@@ -107,4 +116,45 @@ th, td{
 th{
     background-color: #3e1313;
     color: white;
+}
+
+.loginmsg{
+    margin-top: 100px;
+    margin-left: 300px;
+}
+#welcome1{
+	color:#043c53;
+	font-weight:600px;
+	font-family:'Fira Sans', sans-serif;
+}
+
+#welcome2{
+	font-size:12px;
+	font-weight:bold	;
+	text-align:center;
+	font-family:'Fira Sans', sans-serif;
+}
+
+#account{
+	font-size:14px;
+	font-weight:bold;
+	text-align:center;
+	font-family:'Fira Sans', sans-serif;
+	
+}
+.reg{
+	width:40%;
+	margin-left:110px;
+	padding:10px;
+	background-color:#1877f2;
+	border:none;
+	border-radius:5px;
+	color:white;
+	font-weight:bold;
+	cursor: pointer;
+}
+#logo{
+	color:rgb(146, 203, 12);
+	text-align:center;
+	font-size:bold;
 }
