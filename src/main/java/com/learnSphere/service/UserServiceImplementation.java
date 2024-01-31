@@ -33,7 +33,7 @@ public class UserServiceImplementation implements UserService {
 
 
 	@Override
-	public boolean validatepassword(String email, String password) {
+	public boolean validatePassword(String email, String password) {
 		Users user = urepo.findByEmail(email);
 		if(user!=null) {
 			if(user.getPassword().equals(password)) {

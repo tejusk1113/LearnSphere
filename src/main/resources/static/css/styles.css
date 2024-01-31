@@ -130,15 +130,15 @@ th{
 
 #welcome2{
 	font-size:12px;
-	font-weight:bold	;
-	text-align:center;
+	font-weight: bold	;
+	text-align: center;
 	font-family:'Fira Sans', sans-serif;
 }
 
 #account{
 	font-size:14px;
-	font-weight:bold;
-	text-align:center;
+	font-weight: bold;
+	text-align: center;
 	font-family:'Fira Sans', sans-serif;
 	
 }
@@ -147,15 +147,15 @@ th{
 	margin-left:110px;
 	padding:10px;
 	background-color:#1877f2;
-	border:none;
+	border: none;
 	border-radius:5px;
-	color:white;
-	font-weight:bold;
+	color: white;
+	font-weight: bold;
 	cursor: pointer;
 }
 #logo{
 	color:rgb(146, 203, 12);
-	text-align:center;
+	text-align: center;
 	font-size:bold;
 }
 
@@ -175,9 +175,9 @@ th{
 	margin-left:110px;
 	padding:10px;
 	background-color:#1877f2;
-	border:none;
+	border: none;
 	border-radius:5px;
-	color:white;
-	font-weight:bold;
+	color: white;
+	font-weight: bold;
 	cursor: pointer;
 }

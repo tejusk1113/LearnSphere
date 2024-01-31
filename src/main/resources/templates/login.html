@@ -23,8 +23,10 @@
             <label>Password:</label><br>
             <input type="password" name="password" class="input" placeholder="Enter your password"><br>
             <input type="submit" name="submit" value="Login" class="submit">
+            <p th:if="${message}" class="error-message" th:text="${message}" style="color:red"></p>
         </form>
     </div>
+ 	 
 
     
 </body>

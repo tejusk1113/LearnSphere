@@ -29,7 +29,9 @@
 				required pattern="[a-z A-z]{1,15}"><br>
 			<br> <label>Email:</label><br> <input type="email"
 				name="email" placeholder="Enter your email" class="input" required><br>
-			<br> <label>Password:</label><br> <input type="password"
+			<br>
+			 <p th:if="${message}" class="error-message" th:text="${message}" style="color:red"></p>
+			  <label>Password:</label><br> <input type="password"
 				name="password" placeholder="Enter your password" class="input"
 				required pattern="{8}"><br>
 			<br> <label>Role:</label><br> <input type="radio"
@@ -40,7 +42,8 @@
 			<br> <label>Mobile:</label><br> <input type="text"
 				name="mobile" placeholder="Enter your mobile number" class="input"
 				required><br>
-			<br> <input type="submit" value="Register" class="submit">
+			<br>
+			 <input type="submit" value="Register" class="submit">
 		</form>
 	</div>
 </body>
