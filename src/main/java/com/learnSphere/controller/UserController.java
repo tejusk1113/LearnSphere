@@ -92,7 +92,7 @@ public class UserController {
 	CommentsService cs;
 
 	@PostMapping(value = "/addComments")
-	public String addComments(@RequestParam("comments") String comments,Model model) {
+	public String addComments(@RequestParam("comments") String comments,Model model,RedirectAttributes redirectAttributes) {
 		System.out.println(comments);
 
 		// Add comments to the database or perform other necessary actions
@@ -100,7 +100,7 @@ public class UserController {
 		cmts.setCommentsStore(comments);
 		cs.addComments(cmts);
 
-		model.addAttribute("message", "comments added successfully!");
+		redirectAttributes.addFlashAttribute("message", "Comments added successfully!");
 		
 		return "redirect:/lessions";
 	}

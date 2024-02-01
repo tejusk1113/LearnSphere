@@ -81,4 +81,9 @@ public class NavController {
 		System.out.println("Reached to the navigation");
 		return "lessions";
 	}
+	
+	@GetMapping(value="/payment")
+	public String payment() {
+		return "payment";
+	}
 }

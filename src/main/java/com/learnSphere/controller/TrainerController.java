@@ -15,7 +15,7 @@ import com.learnSphere.entity.Lession;
 import com.learnSphere.service.TrainerService;
 
 @Controller
-@RequestMapping(value = "api/trainer")
+@RequestMapping(value = "/api/trainer")
 public class TrainerController {
 
 	@Autowired
