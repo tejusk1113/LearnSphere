@@ -29,7 +29,7 @@ public class StudentController {
 	    Lession ls = sser.getLession(lessionId);
 	        System.out.println("Lession ID: " + ls.getLessionId());
 	    model.addAttribute("lession", ls);
-	    return "myLessions";
+	    return "lessions";
 	}
 	
 	@GetMapping(value="/getAllCourse")

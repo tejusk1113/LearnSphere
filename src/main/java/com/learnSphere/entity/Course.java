@@ -15,6 +15,7 @@ public class Course {
 	int coursePrice;
 	@OneToMany
 	List<Lession> lession;
+	
 	public int getCourseId() {
 		return courseId;
 	}

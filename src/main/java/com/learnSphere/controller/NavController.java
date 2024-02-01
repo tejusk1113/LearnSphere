@@ -76,9 +76,9 @@ public class NavController {
 		return "demoLession";
 	}
 	
-	@GetMapping(value="/myLessions")
-	public String myLessions() {
+	@GetMapping(value="/lessions")
+	public String lessions() {
 		System.out.println("Reached to the navigation");
-		return "myLessions";
+		return "lessions";
 	}
 }

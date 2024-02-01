@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -91,7 +92,7 @@ public class UserController {
 	CommentsService cs;
 
 	@PostMapping(value = "/addComments")
-	public String addComments(@RequestParam("comments") String comments, Model model) {
+	public String addComments(@RequestParam("comments") String comments,Model model) {
 		System.out.println(comments);
 
 		// Add comments to the database or perform other necessary actions
@@ -99,18 +100,18 @@ public class UserController {
 		cmts.setCommentsStore(comments);
 		cs.addComments(cmts);
 
-		// Retrieve all comments
-		List<Comments> allComments = cs.getAllComments();
-
-		// Add comments to the model
-		model.addAttribute("allComments", allComments);
-
-		// Return the view name directly
-		return "myLessions";
+		model.addAttribute("message", "comments added successfully!");
+		
+		return "redirect:/lessions";
 	}
 
 //	@GetMapping(value="/getAllComments")
-//	public String getAllComments(Model	 model) {
+//	public String getAllComments(Model model) {
+//		
+//		// Retrieve all comments
+//				
+//		return "myLessions";
+//		
 //		
 //	}
 
