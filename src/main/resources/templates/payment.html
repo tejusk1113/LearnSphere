@@ -10,26 +10,40 @@
 </head>
 <body>
 <div>
-
-		<form id="payment-form" action="/api/order/createOrder" method="post">
+    <form id="payment-form" action="/api/order/createOrder" method="post">
+    	
+    	<label>Enter EmailId:</label><br>
+        <input type="text" name="email" id="email"><br><br>
+        <label>Enter courseId:</label><br>
+        <input type="text" name="courseID" id="courseID"><br><br>
         <label>Enter Amount:</label><br>
         <input type="number" id="amount" name="amount"><br><br>
         <button type="submit" id="pay-button">Pay</button>
     </form>
 
-    
-
     <script>
         $("#payment-form").on("submit", function (e) {
             e.preventDefault();
             createOrder();
+            return false;
         });
 
-function createOrder() {
-	 var amount = $("#amount").val();
-    $.post("/api/order/createOrder", { amount: amount })
-        .done(function(order) {
-            order = JSON.parse(order);
+        function createOrder() {
+        	var email = $("#email").val();
+            var courseID = $("#courseID").val();
+            var amount = $("#amount").val();
+            $.post("/api/order/createOrder", { email: email, courseID: courseID, amount: amount })
+                .done(function(order) {
+                    order = JSON.parse(order);
+                    // Move the Razorpay modal opening outside the $.post callback
+                    openRazorpayModal(order);
+                })
+                .fail(function(error) {
+                    console.error("Error:", error);
+                });
+        }
+
+        function openRazorpayModal(order) {
             var options = {
                 "key": "rzp_test_2atyh4iOGNhFr1",
                 "amount": order.amount_due.toString(),
@@ -54,25 +68,22 @@ function createOrder() {
             };
             var rzp1 = new Razorpay(options);
             rzp1.open();
-        })
-        .fail(function(error) {
-            console.error("Error:", error);
-        });
-}
+        }
 
-function verifyPayment(orderId, paymentId, signature) {
-     $.post("/verify", { orderId: orderId, paymentId: paymentId, signature: signature })
-         .done(function(isValid) {
-             if (isValid) {
-                 console.log("Payment successful");
-             } else {
-                 console.log("Payment failed");
-             }
-         })
-         .fail(function(error) {
-             console.error("Error:", error);
-         });
-}
-</script>
+        function verifyPayment(orderId, paymentId, signature) {
+            $.post("/verify", { orderId: orderId, paymentId: paymentId, signature: signature })
+                .done(function(isValid) {
+                    if (isValid) {
+                        console.log("Payment successful");
+                    } else {
+                        console.log("Payment failed");
+                    }
+                })
+                .fail(function(error) {
+                    console.error("Error:", error);
+                });
+            return false;
+        }
+    </script>
 </body>
 </html>

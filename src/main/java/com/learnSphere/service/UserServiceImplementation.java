@@ -24,7 +24,7 @@ public class UserServiceImplementation implements UserService {
 		urepo.save(user);
 	}
 
-
+	
 
 	@Override
 	public boolean validateEmail(String email) {
