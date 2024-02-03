@@ -1,5 +1,7 @@
 package com.learnSphere.controller;
 
+import java.io.IOException;
+import java.util.Base64;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.learnSphere.entity.Course;
 import com.learnSphere.entity.Lession;
@@ -28,17 +31,28 @@ public class TrainerController {
 
 	@PostMapping(value = "/addCourse")
 	public String addCourse(@RequestParam("courseId") int courseId,
-			@RequestParam("courseName") String courseName,
-			@RequestParam("coursePrice") int coursePrice) {
-		Course course=new Course();
-		course.setCourseId(courseId);
-		course.setCourseName(courseName);
-		course.setCoursePrice(coursePrice);
-		
-		String msg = tser.addCourse(course);		
-		System.out.println(msg);
-		return "addLession";
-		
+	        @RequestParam("courseName") String courseName,
+	        @RequestParam("courseDescription") String courseDescription,
+	        @RequestParam("coursePrice") int coursePrice,
+	        @RequestParam("courseImage") MultipartFile courseImage) {
+
+	    Course course = new Course();
+	    course.setCourseId(courseId);
+	    course.setCourseName(courseName);
+	    course.setCourseDescription(courseDescription);
+	    course.setCoursePrice(coursePrice);
+
+	    try {
+	        // Set the course image as a byte array
+	        course.setCourseImage(Base64.getEncoder().encodeToString(courseImage.getBytes()));
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	        // Handle the exception appropriately
+	    }
+
+	    String msg = tser.addCourse(course);
+	    System.out.println(msg);
+	    return "addLession";
 	}
 	
 	@PostMapping(value="/addLession")

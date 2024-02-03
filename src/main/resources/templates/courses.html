@@ -4,6 +4,7 @@
 <head>
 	<meta charset="ISO-8859-1">
 	<title>Insert title here</title>
+	<link rel="stylesheet" href="/css/styles.css">
 	<style>
 		h1 {
 			text-align: center;
@@ -46,27 +47,22 @@
 
 <body>
 	<h1>Welcome to the courses world....!</h1>
-	<div classs="container">
-		<form action="" method="get">
-			<table border="5 solid black">
-				<thead>
-					<tr>
-						<th>Course ID</th>
-						<th>Course Name</th>
-						<th>Course Price</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr th:each="Course : ${courses}">
-						<td th:text="${Course.courseId}"></td>
-						<td th:text="${Course.courseName}"></td>
-						<td th:text="${Course.coursePrice}"></td>
-						
-					</tr>
-				</tbody>
-			</table>
-		</form>
-	</div>
+	<div class="coursecontainer" th:each="course : ${courses}">
+    <img 
+     th:src="@{'data:image/jpeg;base64,' + ${course.courseImage}}"
+     alt="Course Image" 
+     class="course-image" 
+     width="300" 
+     height="175">
+	<p><span th:text="${course.courseDescription}"></span></p>
+    <h4>Course Name: <span th:text="${course.courseName}"></span></h4>
+    <h5>Course Price: <span th:text="${course.coursePrice}"></span></h5>
+</div>
+
+
+
+
+
 </body>
 
 </html>

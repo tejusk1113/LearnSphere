@@ -48,13 +48,17 @@
 <body>
 	<h1>Add Course Page</h1>
 	<div class="container">
-		<form action="/api/trainer/addCourse" method="post">
+		<form action="/api/trainer/addCourse" method="post" enctype="multipart/form-data">
 			<label>Course Id:</label><br>
 			<input type="text" placeholder="Enter your courseId" name="courseId" class="input"><br><br>
 			<label>Course Name:</label><br>
 			<input type="text" placeholder="Enter your course name" name="courseName" class="input"><br><br>
+			<label>Course Description:</label><br>
+			<textarea placeholder="Enter your course description" name="courseDescription" class="input"></textarea><br><br>
 			<label>Course Price:</label><br>
 			<input type="text" placeholder="Enter your course price" name="coursePrice" class="input"><br><br>
+			<label>Course Image:</label><br>
+			<input type="file" name="courseImage" class="input" accept="image/*"><br><br>
 			<input type="submit" value="Add Course" class="button">
 		</form>
 	</div>
