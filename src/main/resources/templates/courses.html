@@ -53,10 +53,11 @@
      alt="Course Image" 
      class="course-image" 
      width="300" 
-     height="175">
+     height="175" 
+     style="max-width: 100%;">
 	<p><span th:text="${course.courseDescription}"></span></p>
     <h4>Course Name: <span th:text="${course.courseName}"></span></h4>
-    <h5>Course Price: <span th:text="${course.coursePrice}"></span></h5>
+    <h5>Course Price: <span th:text="${course.coursePrice}"></span> <span><input type="submit" value="Enroll" class="enroll"></span></h5>
 </div>
 
 
