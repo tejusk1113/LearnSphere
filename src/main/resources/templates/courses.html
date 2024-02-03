@@ -9,8 +9,59 @@
 		h1 {
 			text-align: center;
 		}
+		
+body {
+	background-color: #f0f0f0;
+	margin: 0;
+	padding: 0;
+}
 
-		.container {
+.contets {
+	margin-left: 10px;
+	margin-right: 600px;
+}
+
+.nav-container {
+	background-color: #404040;
+	height: 30px;
+	max-width: 100%;
+	padding: 20px;
+}
+
+nav a {
+	text-decoration: none;
+	border: none;
+	padding: auto 20px;
+	border-radius: 5px;
+	color: white;
+}
+
+/*.home {
+	margin-left: 60%;
+	background-color: #a0a0a0;
+	padding: 5px 20px;
+}*/
+
+.login {
+	margin-left: 75%;
+	background-color: rgb(68, 130, 247);
+	padding: 5px 20px;
+}
+
+.register {
+	margin-left: 2%;
+	background-color: #3cb371;
+	padding: 5px 20px;
+}
+
+.logo {
+	color: white;
+	font-size: large;
+	font-weight: bold;
+	border: none;
+	cursor: pointer;
+}
+	/*.container {
 			max-width: 400px;
 			margin: 0px auto;
 			border: 1px solid #ccc;
@@ -27,7 +78,7 @@
 			/* border-radius: 10px;
                 padding: 20px;
                 border: 2px solid #ccc;
-                 */
+                 
 		}
 
 		.button {
@@ -42,10 +93,21 @@
 			font-size: large;
 			cursor: pointer;
 		}
+		*/
 	</style>
 </head>
 
 <body>
+
+<div class="nav-container">
+		<nav>
+			<div class="nav-contents">
+				<a class="logo" href="/">LearnSphere</a> 
+				<a class="login" href="/login">Login</a> 
+				<a class="register"href="/register">Register</a>
+			</div>
+		</nav>
+	</div>
 	<h1>Welcome to the courses world....!</h1>
 	<div class="coursecontainer" th:each="course : ${courses}">
     <img 
@@ -59,6 +121,8 @@
     <h4>Course Name: <span th:text="${course.courseName}"></span></h4>
     <h5>Course Price: <span th:text="${course.coursePrice}"></span> <span><input type="submit" value="Enroll" class="enroll"></span></h5>
 </div>
+
+<div th:replace="/footer::footer"></div>
 
 
 

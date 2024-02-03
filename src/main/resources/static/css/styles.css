@@ -4,12 +4,8 @@ body {
 	background-color: #f0f0f0;
 }
 
-div {
-	display: inline-block;
-	/*margin-right: 120px;*/
-}
 
-.navbarcontainer {
+/*.navbarcontainer {
 	background-color: #4d3636;
 	padding: 15px;
 }
@@ -19,7 +15,7 @@ nav a {
 	text-decoration: none;
 	padding: 0px 110px;
 	font-weight: bolder;
-}
+}*/
 
 .formcontainer {
 	max-width: 400px;
@@ -33,6 +29,7 @@ nav a {
 	padding-left: 30px;
 	padding-right: 150px;
 	border-radius: 10px;
+	display: inline-block;
 }
 
 .input {
@@ -125,6 +122,7 @@ th {
 .loginmsg {
 	margin-top: 100px;
 	margin-left: 300px;
+	display: inline-block;
 }
 
 #welcome1 {
@@ -193,6 +191,7 @@ th {
 	margin-left: 50px;
 	margin-top: 20px;
 	border-radius: 5px;
+	display: inline-block;
 }
 
 .coursecontainer p {
@@ -218,4 +217,48 @@ th {
 	border-radius:5px;
 	color:white;
 	font-weight:bold;
+	cursor: pointer;
+}
+
+
+.footer-container {
+	margin-top:200px;
+	position: relative;
+  	bottom: 0;
+	width: 100%;
+	background-color: #000;
+	display: flex;
+	flex-wrap: wrap;
+	/* justify-content: space-around; */
+}
+
+.footer {
+	margin-left: 30px;
+	color: white;
+	padding: 10px;
+}
+
+.item-1 {
+	margin-top: 0px;
+}
+
+.item-2 {
+	margin-left: 25%;
+}
+
+.item-3 {
+	margin-left: 25%;
+}
+
+.item-3 a {
+	padding: 15px;
+}
+
+p a {
+	text-decoration: none;
+	color: white;
+}
+
+p a:hover {
+	text-decoration: underline;
 }

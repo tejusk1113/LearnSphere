@@ -86,4 +86,9 @@ public class NavController {
 	public String payment() {
 		return "payment";
 	}
+	
+	@GetMapping(value="/termsandconditions")
+	public String termsandconditions() {
+		return "termsandconditions";
+	}
 }
