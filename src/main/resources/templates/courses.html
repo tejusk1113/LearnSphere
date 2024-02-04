@@ -109,7 +109,8 @@ nav a {
 		</nav>
 	</div>
 	<h1>Welcome to the courses world....!</h1>
-	<div class="coursecontainer" th:each="course : ${courses}">
+	<form action="/login" method="get">
+	<div class="coursecontainer" th:each="course : ${courses}" >
     <img 
      th:src="@{'data:image/jpeg;base64,' + ${course.courseImage}}"
      alt="Course Image" 
@@ -121,6 +122,7 @@ nav a {
     <h4>Course Name: <span th:text="${course.courseName}"></span></h4>
     <h5>Course Price: <span th:text="${course.coursePrice}"></span> <span><input type="submit" value="Enroll" class="enroll"></span></h5>
 </div>
+</form>
 
 <div th:replace="/footer::footer"></div>
 

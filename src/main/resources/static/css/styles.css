@@ -184,7 +184,7 @@ th {
 }
 
 .coursecontainer {
-	height:425px;
+
 	width: 302px;
 	background-color: white;
 	border: solid f0f0f0 5px;
@@ -200,9 +200,7 @@ th {
 	padding: 10px;
 }
 
-.coursecontainer img {
-	padding-left: 2px;
-}
+
 
 .coursecontainer h4,h5{
 	padding-left:10px;

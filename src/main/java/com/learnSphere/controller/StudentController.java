@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.learnSphere.entity.Course;
 import com.learnSphere.entity.Lession;
+import com.learnSphere.entity.Users;
 import com.learnSphere.service.StudentService;
 import com.learnSphere.service.TrainerService;
+import com.learnSphere.service.UserService;
 
 @Controller
 @RequestMapping(value="/api/student")
@@ -23,6 +25,9 @@ public class StudentController {
 	
 	@Autowired
 	TrainerService tser;
+	
+	@Autowired
+	UserService us;
 	
 	@GetMapping(value = "/getLessions")
 	public String getLession(@RequestParam("lessionId") int lessionId, Model model) {
@@ -42,6 +47,14 @@ public class StudentController {
 		}
 		model.addAttribute("courses", cr);
 		return "forward:/purchase";
+	}
+	
+	@GetMapping(value = "/getAllCourseByEmail")
+	public String getAllCourseByEmail(@RequestParam("email") String email,Model model) {
+		Users user = us.findByEmail(email);
+		List<Course> courses = sser.findAllCourseByUserId(user.getId());
+		model.addAttribute("course", courses);
+		return "myCourse";
 	}
 	
 

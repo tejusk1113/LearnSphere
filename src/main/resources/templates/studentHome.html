@@ -2,55 +2,126 @@
 <html>
 
 <head>
-	<meta charset="ISO-8859-1">
-	<title>Insert title here</title>
-	<style>
-		h1 {
-			text-align: center;
-			padding: 20px 0px;
-			color: #936a0c;
-		}
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/css/styles.css">
+<style>
+h1 {
+	text-align: center;
+	padding: 20px 0px;
+	color: #936a0c;
+}
 
-		a:hover {
-			color: blue;
-		}
+a:hover {
+	color: blue;
+}
 
-		.container {
-			max-width: 400px;
-			margin: 0px auto;
-			border: 1px solid rgb(0, 0, 0);
-			border-radius: 10px;
-			padding: 40px;
-		}
+.container {
+	max-width: 400px;
+	margin: 0px auto;
+	border: 1px solid rgb(0, 0, 0);
+	border-radius: 10px;
+	padding: 40px;
+}
 
-		.form-button {
-			width: 100%;
-			margin: 0px 0px;
-			padding: 10px;
-			border: none 1px;
-			border-radius: 10px;
-			background-color: rgb(20, 216, 43);
+.form-button {
+	width: 100%;
+	margin: 0px 0px;
+	padding: 10px;
+	border: none 1px;
+	border-radius: 10px;
+	background-color: rgb(20, 216, 43);
+}
 
-		}
+a {
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 15px;
+}
 
-		a {
-			color: white;
-			font-weight: bold;
-			text-decoration: none;
-			font-size: 15px;
 
-		}
-	</style>
+.nav-container {
+	background-color: #404040;
+	height: 30px;
+	max-width: 100%;
+	padding: 20px;
+}
+
+nav a {
+	text-decoration: none;
+	border: none;
+	padding: auto 20px;
+	border-radius: 5px;
+	color: white;
+}
+
+/*.home {
+	margin-left: 60%;
+	background-color: #a0a0a0;
+	padding: 5px 20px;
+}*/
+
+.login {
+	margin-left: 75%;
+	background-color: rgb(68, 130, 247);
+	padding: 5px 20px;
+}
+
+.register {
+	margin-left: 2%;
+	background-color: #3cb371;
+	padding: 5px 20px;
+}
+
+.logo {
+	color: white;
+	font-size: large;
+	font-weight: bold;
+	border: none;
+	cursor: pointer;
+}
+
+</style>
 </head>
 
 <body>
+	<div class="nav-container">
+		<nav>
+		<form action="" method="get"></form>
+			<div class="nav-contents">
+				<a class="logo" href="/">LearnSphere</a> <a class="login"
+					href="/">Logout</a> <a class="register" href="/myCourse">My Courses</a>
+			</div>
+		</nav>
+	</div>
 	<h1>Welcome to the Student Home Page...!</h1>
-	<div class="container">
+	<form action="/payment" method="get">
+		<div class="coursecontainer" th:each="course : ${courses}">
+			<img th:src="@{'data:image/jpeg;base64,' + ${course.courseImage}}"
+				alt="Course Image" class="course-image" width="300" height="175"
+				style="max-width: 100%;">
+			<p>
+				<span th:text="${course.courseDescription}"></span>
+			</p>
+			<h4>
+				Course Name: <span th:text="${course.courseName}"></span>
+			</h4>
+			<h5>
+				Course Price: <span th:text="${course.coursePrice}"></span> <span><input
+					type="submit" value="Enroll" class="enroll"></span>
+			</h5>
+		</div>
+	</form>
+
+	<!--  <div class="container">
 		<form method="get">
 			<button class="form-button"><a href="/api/student/getAllCourse" target="_blank">Buy Course</a></button><br><br>
 			<button class="form-button"><a href="/myCourses" target="_blank">My Courses</a></button><br><br>
 		</form>
-	</div>
+	</div> -->
+
+	<div th:replace="/footer::footer"></div>
 </body>
 
 </html>

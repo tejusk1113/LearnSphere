@@ -81,6 +81,6 @@ public class TrainerController {
 		System.out.println("Hello world");
 		model.addAttribute("courses", cr);
 		System.out.println("Hello world");
-		return "forward:/courses";
+		return "courses";
 	}
 }

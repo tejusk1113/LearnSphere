@@ -61,7 +61,7 @@ public class NavController {
 		return "courses";
 	}
 	
-	@GetMapping(value="/myCourses")
+	@GetMapping(value="/myCourse")
 	public String myCourses() {	
 		return "myCourse";
 	}

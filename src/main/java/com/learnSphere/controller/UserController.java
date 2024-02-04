@@ -12,9 +12,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.learnSphere.entity.Comments;
+import com.learnSphere.entity.Course;
 import com.learnSphere.entity.Users;
 import com.learnSphere.service.CommentsService;
 import com.learnSphere.service.StudentService;
+import com.learnSphere.service.TrainerService;
 import com.learnSphere.service.UserService;
 
 @Controller
@@ -26,6 +28,9 @@ public class UserController {
 
 	@Autowired
 	StudentService ss;
+	
+	@Autowired
+	TrainerService ts;
 
 	public UserController(UserService us) {
 		super();
@@ -71,7 +76,9 @@ public class UserController {
 				Users user = us.findByEmail(email);
 				if (user.getRole().equals("Student")) {
 					System.out.println("login successfull");
-					return "redirect:/studentHome";
+					List<Course> allCourse = ts.findAllCourse();
+					model.addAttribute("courses", allCourse);
+					return "studentHome";
 				} else {
 					return "redirect:/trainerHome";
 				}
