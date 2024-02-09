@@ -30,7 +30,7 @@ public class StudentServiceImplementation implements StudentService {
 
 	@Override
 	public List<Course> findAllCourseByUserId(long id) {
-		List<Orders> ords = orepo.findAll();
+		List<Orders> ords = orepo.findByUsersId(id);
 		List<Course> course=new ArrayList<Course>();
 		for(Orders ord:ords) {
 			Course crs = ord.getCourse();

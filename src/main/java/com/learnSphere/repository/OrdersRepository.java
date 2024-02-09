@@ -10,6 +10,9 @@ import com.learnSphere.entity.Orders;
 @Repository
 public interface OrdersRepository extends JpaRepository<Orders, Integer> {
 
+	List<Orders> findByUsersId(long id);
+
+
 //  List<Orders> findByUserId(long id);
 
 }
