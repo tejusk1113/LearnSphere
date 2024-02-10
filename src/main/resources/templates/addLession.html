@@ -1,61 +1,65 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Add Lession</title>
-        <style>
-            h1{
-                text-align: center;
-            }
-            .container{
-                max-width: 350px;
-                margin: 0 auto;
-                background-color: #fff;
-                border: #ccc solid 1px;
-                padding: 40px;
-                border-radius: 10px;
-            }
-            .input{
-                width: 100%;
-                margin: 5px 0px;
-                border: 1px solid #ccc;
-                border-radius: 3px;
-                padding: 8px;
-                font-weight: bold;
+<head>
+<title>Add Lession</title>
+<style>
+h1 {
+	text-align: center;
+}
 
-            }
-            label{
-                font-weight: bold;
-            }
+.container {
+	max-width: 350px;
+	margin: 0 auto;
+	background-color: #fff;
+	border: #ccc solid 1px;
+	padding: 40px;
+	border-radius: 10px;
+}
 
-            .button{
-                width: 105%;
-                padding: 8px;
-                font-weight: bold;
-                font-size: large;
-                background-color: rgb(32, 218, 165);
-                border: none;
-                border-radius: 5px;
-                color: #fff;
-                cursor: pointer;
-            }
-        </style>
-    </head>
-    <body>
-        <h1>Add Course Lession</h1>
-        <div class="container">
-            <form action="/api/trainer/addLession" method="post">
-				<label>Course Id:</label><br>
-                <input type="text" placeholder="Enter course Id" name="courseId" class="input" required><br><br>
-                <label>Lession Id:</label><br>
-                <input type="text" placeholder="Enter lession id" name="lessionId" class="input" required><br><br>
-                <label>Lession Name:</label><br>
-                <input type="text" placeholder="Enter lession name" name="lessionName" class="input" required><br><br>
-                <label>Topics:</label><br>
-                <input type="text" placeholder="Enter topics" name="topics" class="input" required><br><br>
-                <label>Link:</label><br>
-                <input type="text" placeholder="Enter Link" name="link" class="input" required><br><br>
-                <input type="submit" value="Add Lession" class="button">
-            </form>
-        </div>
-    </body>
+.input {
+	width: 100%;
+	margin: 5px 0px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	padding: 8px;
+	font-weight: bold;
+}
+
+label {
+	font-weight: bold;
+}
+
+.button {
+	width: 105%;
+	padding: 8px;
+	font-weight: bold;
+	font-size: large;
+	background-color: rgb(32, 218, 165);
+	border: none;
+	border-radius: 5px;
+	color: #fff;
+	cursor: pointer;
+}
+</style>
+</head>
+<body>
+	<h1>Add Course Lession</h1>
+	<div class="container">
+		<form action="/api/trainer/addLession" method="post">
+			<label>Course Id:</label><br> <input type="text"
+				placeholder="Enter course Id" name="courseId" class="input" required><br>
+			<br> <label>Lession Id:</label><br> <input type="text"
+				placeholder="Enter lession id" name="lessionId" class="input"
+				required><br>
+			<br> <label>Lession Name:</label><br> <input type="text"
+				placeholder="Enter lession name" name="lessionName" class="input"
+				required><br>
+			<br> <label>Topics:</label><br> <input type="text"
+				placeholder="Enter topics" name="topics" class="input" required><br>
+			<br> <label>Link:</label><br> <input type="text"
+				placeholder="Enter Link" name="link" class="input" required><br>
+			<br> <input type="submit" value="Add Lession" class="button">
+		</form>
+	</div>
+</body>
 </html>

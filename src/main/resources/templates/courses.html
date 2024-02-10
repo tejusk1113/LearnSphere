@@ -2,14 +2,14 @@
 <html>
 
 <head>
-	<meta charset="ISO-8859-1">
-	<title>Insert title here</title>
-	<link rel="stylesheet" href="/css/styles.css">
-	<style>
-		h1 {
-			text-align: center;
-		}
-		
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/css/styles.css">
+<style>
+h1 {
+	text-align: center;
+}
+
 body {
 	background-color: #f0f0f0;
 	margin: 0;
@@ -41,7 +41,6 @@ nav a {
 	background-color: #a0a0a0;
 	padding: 5px 20px;
 }*/
-
 .login {
 	margin-left: 75%;
 	background-color: rgb(68, 130, 247);
@@ -61,7 +60,7 @@ nav a {
 	border: none;
 	cursor: pointer;
 }
-	/*.container {
+/*.container {
 			max-width: 400px;
 			margin: 0px auto;
 			border: 1px solid #ccc;
@@ -94,37 +93,39 @@ nav a {
 			cursor: pointer;
 		}
 		*/
-	</style>
+</style>
 </head>
 
 <body>
 
-<div class="nav-container">
+	<div class="nav-container">
 		<nav>
 			<div class="nav-contents">
-				<a class="logo" href="/">LearnSphere</a> 
-				<a class="login" href="/login">Login</a> 
-				<a class="register"href="/register">Register</a>
+				<a class="logo" href="/">LearnSphere</a> <a class="login"
+					href="/login">Login</a> <a class="register" href="/register">Register</a>
 			</div>
 		</nav>
 	</div>
 	<h1>Welcome to the courses world....!</h1>
 	<form action="/login" method="get">
-	<div class="coursecontainer" th:each="course : ${courses}" >
-    <img 
-     th:src="@{'data:image/jpeg;base64,' + ${course.courseImage}}"
-     alt="Course Image" 
-     class="course-image" 
-     width="300" 
-     height="175" 
-     style="max-width: 100%;">
-	<p><span th:text="${course.courseDescription}"></span></p>
-    <h4>Course Name: <span th:text="${course.courseName}"></span></h4>
-    <h5>Course Price: <span th:text="${course.coursePrice}"></span> <span><input type="submit" value="Enroll" class="enroll"></span></h5>
-</div>
-</form>
+		<div class="coursecontainer" th:each="course : ${courses}">
+			<img th:src="@{'data:image/jpeg;base64,' + ${course.courseImage}}"
+				alt="Course Image" class="course-image" width="300" height="175"
+				style="max-width: 100%;">
+			<p>
+				<span th:text="${course.courseDescription}"></span>
+			</p>
+			<h4>
+				Course Name: <span th:text="${course.courseName}"></span>
+			</h4>
+			<h5>
+				Course Price: <span th:text="${course.coursePrice}"></span> <span><input
+					type="submit" value="Enroll" class="enroll"></span>
+			</h5>
+		</div>
+	</form>
 
-<div th:replace="/footer::footer"></div>
+	<div th:replace="/footer::footer"></div>
 
 
 

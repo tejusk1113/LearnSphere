@@ -5,7 +5,8 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <link rel="stylesheet" href="/css/styles.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Your+Google+Font">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css2?family=Your+Google+Font">
 <style>
 /* h1 {
 	text-align: center;
@@ -16,7 +17,6 @@
 /* a:hover {
 	color: blue;
 } */
-
 .container {
 	max-width: 400px;
 	margin: 0px auto;
@@ -40,7 +40,6 @@
 	text-decoration: none;
 	font-size: 15px;
 } */
-
 .nav-container {
 	background-color: #404040;
 	height: 30px;
@@ -82,29 +81,31 @@ nav a {
 	border: none;
 	cursor: pointer;
 }
+
 .banner {
-    position: relative;
+	position: relative;
 }
 
 .bannerimage {
-    width: 100%;
-    height: 350px;
-     /* This ensures the image covers the entire container */
+	width: 100%;
+	height: 350px;
+	/* This ensures the image covers the entire container */
 }
 
 .banner-text {
-    position: absolute;
-    top: 50%;
-    left: 2%; /* Adjust the left value to position the text on the left side */
-    transform: translateY(-50%);
-    color: black;
-    font-size: 24px;
-    font-weight: bold;
-    text-align: left;
-    width: 60%; /* Adjust the width based on your design preference */
-  	box-sizing: border-box;
-   	font-family: cursive, sans-serif; 
-   	padding:5px;
+	position: absolute;
+	top: 50%;
+	left: 2%;
+	/* Adjust the left value to position the text on the left side */
+	transform: translateY(-50%);
+	color: black;
+	font-size: 24px;
+	font-weight: bold;
+	text-align: left;
+	width: 60%; /* Adjust the width based on your design preference */
+	box-sizing: border-box;
+	font-family: cursive, sans-serif;
+	padding: 5px;
 }
 </style>
 </head>
@@ -115,18 +116,20 @@ nav a {
 			<form action="" method="get">
 				<div class="nav-contents">
 					<a class="logo" href="/">LearnSphere</a> <a class="login" href="/">Logout</a>
-					<a class="register" href="/api/student/getAllCourseByEmail">My Courses</a>
+					<a class="register" href="/api/student/getAllCourseByEmail">My
+						Courses</a>
 				</div>
 			</form>
 		</nav>
 	</div>
-	
+
 	<div class="banner">
-    <img src="/images/e.jpeg" alt="banner image" class="bannerimage" width="100%" height="300px">
-    <div class="banner-text">
-        <h2>Welcome to LearnSphere e-learning platform</h2>
-    </div>
-</div>
+		<img src="/images/e.jpeg" alt="banner image" class="bannerimage"
+			width="100%" height="300px">
+		<div class="banner-text">
+			<h2>Welcome to LearnSphere e-learning platform</h2>
+		</div>
+	</div>
 	<form action="/payment" method="get">
 		<div class="coursecontainer" th:each="course : ${courses}">
 			<img th:src="@{'data:image/jpeg;base64,' + ${course.courseImage}}"
