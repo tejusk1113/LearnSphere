@@ -40,7 +40,6 @@ a {
 	font-size: 15px;
 }
 
-
 .nav-container {
 	background-color: #404040;
 	height: 30px;
@@ -61,7 +60,6 @@ nav a {
 	background-color: #a0a0a0;
 	padding: 5px 20px;
 }*/
-
 .login {
 	margin-left: 75%;
 	background-color: rgb(68, 130, 247);
@@ -81,21 +79,20 @@ nav a {
 	border: none;
 	cursor: pointer;
 }
-
 </style>
 </head>
 
 <body>
 	<div class="nav-container">
 		<nav>
-		<form action="" method="get"></form>
-			<div class="nav-contents">
-				<a class="logo" href="/">LearnSphere</a> <a class="login"
-					href="/">Logout</a> <a class="register" href="/myCourse">My Courses</a>
-			</div>
+			<form action="" method="get">
+				<div class="nav-contents">
+					<a class="logo" href="/">LearnSphere</a> <a class="login" href="/">Logout</a>
+					<a class="register" href="/api/student/getAllCourseByEmail">My Courses</a>
+				</div>
+			</form>
 		</nav>
 	</div>
-	<h1>Welcome to the Student Home Page...!</h1>
 	<form action="/payment" method="get">
 		<div class="coursecontainer" th:each="course : ${courses}">
 			<img th:src="@{'data:image/jpeg;base64,' + ${course.courseImage}}"

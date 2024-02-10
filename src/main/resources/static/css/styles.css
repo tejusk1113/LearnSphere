@@ -218,7 +218,17 @@ th {
 	cursor: pointer;
 }
 
-
+.viewcourse{
+	height:25px;
+	width:30%;
+	border:none;
+	margin-left:80px;
+	background-color: #1877f2;
+	border-radius:5px;
+	color:white;
+	font-weight:bold;
+	cursor: pointer;
+}
 .footer-container {
 	margin-top:200px;
 	position: relative;
