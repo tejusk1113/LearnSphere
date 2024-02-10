@@ -10,4 +10,6 @@ public interface StudentService {
 	public Lession getLession(int lessionId);
 
 	public List<Course> findAllCourseByUserId(long id);
+
+//	public List<Lession> getAllLessionsByCourseId(int courseId);
 }

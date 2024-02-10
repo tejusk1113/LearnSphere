@@ -16,6 +16,8 @@ import com.learnSphere.service.StudentService;
 import com.learnSphere.service.TrainerService;
 import com.learnSphere.service.UserService;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 @RequestMapping(value="/api/student")
 public class StudentController {
@@ -50,12 +52,25 @@ public class StudentController {
 	}
 	
 	@GetMapping(value = "/getAllCourseByEmail")
-	public String getAllCourseByEmail(@RequestParam("email") String email,Model model) {
+	public String getAllCourseByEmail(Model model,HttpSession session) {
+		String email=(String)session.getAttribute("userEmail");
+		System.out.println(email);
 		Users user = us.findByEmail(email);
-		List<Course> courses = sser.findAllCourseByUserId(user.getId());
-		model.addAttribute("course", courses);
+		List<Course> course = sser.findAllCourseByUserId(user.getId());
+		for(Course courses:course) {
+			System.out.println(courses);
+		}
+		model.addAttribute("courses", course);
 		return "myCourse";
 	}
+	
+//	public String getAllLessionsByCourseId(@RequestParam("courseId") int courseId,Model model) {
+//		
+//		sser.getAllLessionsByCourseId(courseId);
+//		
+//		return null;
+//		
+//	}
 	
 
 

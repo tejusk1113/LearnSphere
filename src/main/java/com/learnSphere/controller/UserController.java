@@ -19,6 +19,8 @@ import com.learnSphere.service.StudentService;
 import com.learnSphere.service.TrainerService;
 import com.learnSphere.service.UserService;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 @RequestMapping(value = "/api/user")
 public class UserController {
@@ -70,7 +72,7 @@ public class UserController {
 
 	@PostMapping(value = "/validateUser")
 	public String validateUser(@RequestParam("email") String email, @RequestParam("password") String password,
-			Model model) {
+			HttpSession session, Model model) {
 		if (us.validateEmail(email) == true) {
 			if (us.validatePassword(email, password) == true) {
 				Users user = us.findByEmail(email);
@@ -78,6 +80,7 @@ public class UserController {
 					System.out.println("login successfull");
 					List<Course> allCourse = ts.findAllCourse();
 					model.addAttribute("courses", allCourse);
+					session.setAttribute("userEmail", user.getEmail());
 					return "studentHome";
 				} else {
 					return "redirect:/trainerHome";
