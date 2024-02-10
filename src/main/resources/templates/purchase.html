@@ -2,58 +2,58 @@
 <html>
 
 <head>
-	<meta charset="ISO-8859-1">
-	<title>purchase</title>
-	<style>
-		  body {
-           
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
+<meta charset="ISO-8859-1">
+<title>purchase</title>
+<style>
+body {
+	background-color: #f4f4f4;
+	margin: 0;
+	padding: 0;
+}
 
-		h1 {
-			text-align: center;
-		}
+h1 {
+	text-align: center;
+}
 
-		.container {
-			max-width: 600px;
-			margin: 0px auto;
-			border: 1px solid #ccc;
-			padding: 10px;
-			border-radius: 10px;
-		}
+.container {
+	max-width: 600px;
+	margin: 0px auto;
+	border: 1px solid #ccc;
+	padding: 10px;
+	border-radius: 10px;
+}
 
-		table {
-			width: 100%;
-			text-align: center;
-			background-color: #fff;
-			/* border-radius: 10px;
+table {
+	width: 100%;
+	text-align: center;
+	background-color: #fff;
+	/* border-radius: 10px;
                 padding: 20px;
                 border: 2px solid #ccc;
                  */
-		}
+}
 
-		.button {
-			width: 75%;
-			background-color: #3498db	;
-			border: none;
-			margin: 5px 0px;
-			padding: 6px;
-			border-radius: 10px;
-			font-weight: bold;
-			color: rgb(255, 255, 255);
-			cursor: pointer;
-		}
-		th{
-			background-color: #4CAF50;
-			color: white;
-		}
-		 tr{
-            background-color: #f2f2f2;
-        }
+.button {
+	width: 75%;
+	background-color: #3498db;
+	border: none;
+	margin: 5px 0px;
+	padding: 6px;
+	border-radius: 10px;
+	font-weight: bold;
+	color: rgb(255, 255, 255);
+	cursor: pointer;
+}
 
-	</style>
+th {
+	background-color: #4CAF50;
+	color: white;
+}
+
+tr {
+	background-color: #f2f2f2;
+}
+</style>
 </head>
 
 <body>
@@ -68,10 +68,10 @@
 					<th>Purchase course</th>
 				</tr>
 				<tr th:each="course:${courses}">
-				<td th:text="${course.courseId}"></td>
-				<td th:text="${course.courseName}"></td>
-				<td th:text="${course.coursePrice}"></td>
-				<td><input type="submit" value="Buy Course" class="button"></td>
+					<td th:text="${course.courseId}"></td>
+					<td th:text="${course.courseName}"></td>
+					<td th:text="${course.coursePrice}"></td>
+					<td><input type="submit" value="Buy Course" class="button"></td>
 				</tr>
 			</table>
 		</form>

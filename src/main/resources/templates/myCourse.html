@@ -6,7 +6,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="/css/styles.css">
 <style>
-h1 {
+/* h1 {
 	text-align: center;
 	padding: 20px 0px;
 	color: #936a0c;
@@ -14,6 +14,47 @@ h1 {
 
 a:hover {
 	color: blue;
+} */
+.nav-container {
+	background-color: #404040;
+	height: 30px;
+	max-width: 100%;
+	padding: 20px;
+}
+
+nav a {
+	text-decoration: none;
+	border: none;
+	padding: auto 20px;
+	border-radius: 5px;
+	color: white;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+/*.home {
+	margin-left: 60%;
+	background-color: #a0a0a0;
+	padding: 5px 20px;
+}*/
+.login {
+	margin-left: 75%;
+	background-color: rgb(68, 130, 247);
+	padding: 5px 20px;
+}
+
+.register {
+	margin-left: 2%;
+	background-color: #3cb371;
+	padding: 5px 20px;
+}
+
+.logo {
+	color: white;
+	font-size: large;
+	font-weight: bold;
+	border: none;
+	cursor: pointer;
 }
 
 .container {
@@ -43,7 +84,17 @@ a {
 </head>
 
 <body>
-
+	<div class="nav-container">
+		<nav>
+			<form action="" method="get">
+				<div class="nav-contents">
+					<a class="logo" href="/">LearnSphere</a> <a class="login" href="/">Logout</a>
+					<a class="register" href="/api/student/getAllCourseByEmail">Buy
+						Courses</a>
+				</div>
+			</form>
+		</nav>
+	</div>
 
 	<!-- <button class="form-button"><a href="/demoLession" target="_blank">Course-1</a></button><br><br>
 			<button class="form-button"><a href="/demoLession" target="_blank">Course-2</a></button><br><br> -->
@@ -64,6 +115,8 @@ a {
 			</h5>
 		</div>
 	</form>
+
+	<div th:replace="/footer::footer"></div>
 </body>
 
 </html>

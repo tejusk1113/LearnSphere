@@ -4,7 +4,7 @@
 
 <head>
 <title>Register Page</title>
- <link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/styles.css">
 
 </head>
 
@@ -18,32 +18,29 @@
 		<form action="/login" method="get">
 			<input type="submit" value="Login" class="log">
 		</form>
-	</div>		
+	</div>
 	<div class="formcontainer">
 		<form action="/api/user/add" method="post">
 			<label>First Name:</label><br> <input type="text"
 				name="firstname" placeholder="Enter your first name" class="input"
-				required pattern="[a-z A-z]{3,15}"><br>
-			<br> <label>Last Name:</label><br> <input type="text"
-				name="lastname" placeholder="Enter your last name" class="input"
-				required pattern="[a-z A-z]{1,15}"><br>
-			<br> <label>Email:</label><br> <input type="email"
-				name="email" placeholder="Enter your email" class="input" required><br>
-			<br>
-			 <p th:if="${message}" class="error-message" th:text="${message}" style="color:red"></p>
-			  <label>Password:</label><br> <input type="password"
+				required pattern="[a-z A-z]{3,15}"><br> <br> <label>Last
+				Name:</label><br> <input type="text" name="lastname"
+				placeholder="Enter your last name" class="input" required
+				pattern="[a-z A-z]{1,15}"><br> <br> <label>Email:</label><br>
+			<input type="email" name="email" placeholder="Enter your email"
+				class="input" required><br> <br>
+			<p th:if="${message}" class="error-message" th:text="${message}"
+				style="color: red"></p>
+			<label>Password:</label><br> <input type="password"
 				name="password" placeholder="Enter your password" class="input"
-				required pattern="{8}"><br>
-			<br> <label>Role:</label><br> <input type="radio"
-				value="Trainer" name="role" required>Trainer <input
-				type="radio" value="Student" name="role" required>Student<br>
+				required pattern="{8}"><br> <br> <label>Role:</label><br>
+			<input type="radio" value="Trainer" name="role" required>Trainer
+			<input type="radio" value="Student" name="role" required>Student<br>
 			<br> <label>DOB:</label><br> <input type="date" name="dob"
-				class="date" required><br>
-			<br> <label>Mobile:</label><br> <input type="text"
-				name="mobile" placeholder="Enter your mobile number" class="input"
-				required><br>
-			<br>
-			 <input type="submit" value="Register" class="submit">
+				class="date" required><br> <br> <label>Mobile:</label><br>
+			<input type="text" name="mobile"
+				placeholder="Enter your mobile number" class="input" required><br>
+			<br> <input type="submit" value="Register" class="submit">
 		</form>
 	</div>
 	<div th:replace="/footer::footer"></div>
